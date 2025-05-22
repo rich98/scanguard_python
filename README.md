@@ -1,8 +1,6 @@
 ##### Scan Guard Pro Beta project
 Version.0.4.5
 
-![50scan guard](https://github.com/user-attachments/assets/4749c1a2-465e-46e1-8916-e821791ca848)
-
 
 ![image](https://github.com/user-attachments/assets/5f3ef36f-f1e1-4e79-b7b1-313f53765b0b)
 
@@ -158,6 +156,8 @@ It is strongly recommended to first deploy the tool in a controlled lab environm
 If you're looking for a dependable, GUI-driven passive scanner that respects your system's integrity while offering clear insight into potentially malicious activity, Scan Guard Pro Beta is worth exploring. It stands as a reminder that traditional, minimalistic tools can remain highly effective in a modern security toolkit.
 
 Please feel free to connect if you're interested in collaborating, suggesting features, or deploying this in a real-world scenario.
+
+![50scan guard](https://github.com/user-attachments/assets/4749c1a2-465e-46e1-8916-e821791ca848)
 
 
 
