@@ -1,4 +1,5 @@
 ##### Scan Guard Pro Beta project
+ersion.0.4.5
 
 
 ![image](https://github.com/user-attachments/assets/5f3ef36f-f1e1-4e79-b7b1-313f53765b0b)
