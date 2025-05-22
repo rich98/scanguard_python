@@ -1,8 +1,7 @@
 ##### Scan Guard Pro Beta project
 
 
-
-![image](https://github.com/user-attachments/assets/8a8ea0e3-c8ff-4cb6-aa4e-fee16415c230)
+![image](https://github.com/user-attachments/assets/5f3ef36f-f1e1-4e79-b7b1-313f53765b0b)
 
 
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
