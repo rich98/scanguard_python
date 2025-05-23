@@ -9,3 +9,6 @@ change from Scan Guard to Scan Uard Dog Pro. Added Copy to clip board and clear 
 Thread Lifecycle Handling
 Currently, sniff_thread is launched and forgotten. If restarted multiple times, it could cause undefined behavior or thread leaks.
 Disabled the start button once monitoring begins and re-enable it only after stopping.
+
+The combobox message Select Interface (or leave blank) is ambiguous and has been updated
+Changed the default item to "[All Interfaces]" and handle it explicitly.
