@@ -1,4 +1,4 @@
-# Scan Guard Pro Beta project
+# Scan Guard Dog Beta project
 Version.0.4.5
 
 ![image](https://github.com/user-attachments/assets/5d9e9248-8b5e-4040-9343-8ddbcdfd80a3)
