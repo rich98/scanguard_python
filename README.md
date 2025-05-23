@@ -1,4 +1,4 @@
-##### Scan Guard Pro Beta project
+# Scan Guard Pro Beta project
 Version.0.4.5
 
 
