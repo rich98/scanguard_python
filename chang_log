@@ -1,14 +1,12 @@
 # Change log
 
-22\05\2025
+22\05\2025 v0.4.6
 
 change from Scan Guard to Scan Uard Dog Pro. Added Copy to clip board and clear console buttons. Re formatted the buttons in to a grid.
 
 Warnings now show in red
 
-version 046 - we do not talk about this
-
-23/05/2025 v047
+23/05/2025 v0.4.7
 
 Thread Lifecycle Handling
 Currently, sniff_thread is launched and forgotten. If restarted multiple times, it could cause undefined behavior or thread leaks.
