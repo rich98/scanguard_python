@@ -1,5 +1,11 @@
-Change log
+# Change log
 
 22\05\2025
 
 change from Scan Guard to Scan Uard Dog Pro. Added Copy to clip board and clear console buttons. Re formatted the buttons in to a grid.
+
+23/05/2025
+
+Thread Lifecycle Handling
+Currently, sniff_thread is launched and forgotten. If restarted multiple times, it could cause undefined behavior or thread leaks.
+Disabled the start button once monitoring begins and re-enable it only after stopping.
