@@ -12,3 +12,6 @@ Disabled the start button once monitoring begins and re-enable it only after sto
 
 The combobox message Select Interface (or leave blank) is ambiguous and has been updated
 Changed the default item to "[All Interfaces]" and handle it explicitly.
+
+Redundant Import and Cleanup
+mport signal, sys, atexit twice. - now resolved
