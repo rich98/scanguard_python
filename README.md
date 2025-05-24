@@ -1,5 +1,5 @@
 # Scan Guard Dog Beta project
-Version.0.4.7
+Version.0.4.10
 
 ![image](https://github.com/user-attachments/assets/5d9e9248-8b5e-4040-9343-8ddbcdfd80a3)
 
@@ -7,7 +7,11 @@ Version.0.4.7
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
 
+
 Scan Guard Pro Beta provides real-time alerts, a visual display of scan activity, and seamless system integration without relying on external dependencies or heavyweight security suites. In keeping with traditional software design values, the tool is built to be understandable, maintainable, and extendable.
+
+![image](https://github.com/user-attachments/assets/eea82c29-0a4a-4afe-98fb-ae40da738ad7)
+
 
 🔍 What Does It Do?
 Scan Guard Pro Beta focuses on detecting several common reconnaissance and enumeration techniques that are frequently employed in penetration testing and by malicious actors. By identifying these behaviors early in the intrusion chain, the tool enables defenders to respond before attackers escalate their access or move laterally through the network.
