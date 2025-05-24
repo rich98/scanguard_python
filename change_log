@@ -20,4 +20,4 @@ mport signal, sys, atexit twice. - now resolved
 
 Dependency on Google's DNS server (8.8.8.8):cMay fail in isolated or restricted environments.
 Doesn't work without outbound connectivity.
-def get_local_ip(self): updated to remove 8.8.8.8 uses hostname
+def get_local_ip(self): updated to remove 8.8.8.8 and now uses hostname, still uses loopback adapter
