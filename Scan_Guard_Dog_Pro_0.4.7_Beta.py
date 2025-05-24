@@ -36,8 +36,6 @@ from queue import Queue, Empty
 import pystray
 from PIL import Image, ImageDraw
 from logging.handlers import RotatingFileHandler
-from tkinter import Toplevel
-from PIL import ImageTk
 
 # Privilege check
 if os.name != 'nt' and os.geteuid() != 0:
@@ -62,10 +60,12 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 queue_handler.setFormatter(formatter)
 logger.addHandler(queue_handler)
 
+log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scan_guard.log")
 try:
-    file_handler = RotatingFileHandler("scan_guard.log", maxBytes=1024000, backupCount=3)
+    file_handler = RotatingFileHandler(log_file_path, maxBytes=1024000, backupCount=3)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
+    logger.info(f"Log file location: {log_file_path}")
 except Exception as e:
     logging.warning(f"File logging disabled: {e}")
 
@@ -77,23 +77,18 @@ class NetworkMonitor:
         self.arp_threshold = arp_threshold
         self.udp_threshold = udp_threshold
         self.time_window = timedelta(seconds=time_window)
-
         self.local_ip = self.get_local_ip()
 
         self.scan_data = defaultdict(list)
         self.icmp_data = defaultdict(list)
         self.arp_data = defaultdict(list)
         self.udp_data = defaultdict(list)
-
         self.sniffer = None
 
     def get_local_ip(self):
         try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            s.connect(("8.8.8.8", 80))
-            ip = s.getsockname()[0]
-            s.close()
-            return ip
+            hostname = socket.gethostname()
+            return socket.gethostbyname(hostname)
         except Exception:
             return '127.0.0.1'
 
@@ -110,7 +105,7 @@ class NetworkMonitor:
     def _check_tcp(self, pkt):
         ip_layer = pkt[IP]
         now = datetime.now()
-        if pkt.haslayer(TCP) and pkt[TCP].flags == "S" and ip_layer.dst == self.local_ip:
+        if pkt.haslayer(TCP) and pkt[TCP].flags & 0x02 and ip_layer.dst == self.local_ip:
             src_ip = ip_layer.src
             dst_port = pkt[TCP].dport
             self.scan_data[src_ip].append((now, dst_port))
@@ -181,9 +176,11 @@ class NetworkMonitor:
 
     def stop(self):
         if self.sniffer:
-            self.sniffer.stop()
-            logging.info("Sniffer stopped.")
-
+            try:
+                self.sniffer.stop()
+                logging.info("Sniffer stopped.")
+            except Exception as e:
+                logging.warning(f"Error stopping sniffer: {e}")
 
 def scan_port(ip, port, timeout):
     try:
@@ -191,7 +188,6 @@ def scan_port(ip, port, timeout):
             return port
     except (socket.timeout, ConnectionRefusedError, OSError):
         return None
-
 
 def list_open_ports(ip, port_range=(1, 1024), timeout=0.3, max_workers=100):
     logging.info(f"Scanning for open TCP ports on {ip} (ports {port_range[0]}–{port_range[1]})...")
@@ -207,7 +203,6 @@ def list_open_ports(ip, port_range=(1, 1024), timeout=0.3, max_workers=100):
     else:
         logging.info(f"No open ports found on {ip} in range {port_range[0]}–{port_range[1]}.")
 
-# GUI-based Application Class
 class NetworkMonitorApp:
     def __init__(self, root):
         self.root = root
@@ -215,29 +210,24 @@ class NetworkMonitorApp:
         self.sniff_thread = None
         self.tray_icon = None
 
-        root.title("Scan Guard Dog  Beta")
+        root.title("Scan Guard Dog Beta")
         root.geometry("950x740")
         root.configure(bg="#2e2e2e")
 
-
-        # Style setup
         style = ttk.Style()
         style.theme_use("default")
         style.configure("TButton", background="#444", foreground="#fff")
         style.configure("TCombobox", fieldbackground="#333", background="#444", foreground="#fff")
 
-        # Interface selection
         self.iface_var = tk.StringVar()
         interfaces = ["[All Interfaces]"] + get_if_list()
         self.interface_combo = ttk.Combobox(root, textvariable=self.iface_var, values=interfaces, state="readonly")
         self.interface_combo.set("[All Interfaces]")
         self.interface_combo.pack(fill='x', padx=10, pady=5)
 
-        # Button section frame
         self.button_frame = tk.Frame(root, bg="#2e2e2e")
         self.button_frame.pack(fill='x', padx=10, pady=(5, 0), expand=False)
 
-        # Top row buttons
         self.start_button = ttk.Button(self.button_frame, text="Start Monitoring", command=self.start_monitoring)
         self.start_button.grid(row=0, column=0, padx=5, pady=5, sticky="ew")
 
@@ -247,12 +237,9 @@ class NetworkMonitorApp:
         self.scan_button = ttk.Button(self.button_frame, text="My open Ports", command=self.scan_ports)
         self.scan_button.grid(row=0, column=2, padx=5, pady=5, sticky="ew")
 
-        # Equal weight for all three columns
         for i in range(3):
             self.button_frame.grid_columnconfigure(i, weight=1)
 
-
-# Second row buttons (formatted like top row)
         self.tray_button = ttk.Button(self.button_frame, text="Minimize to Tray", command=self.minimize_to_tray)
         self.tray_button.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
 
@@ -262,26 +249,17 @@ class NetworkMonitorApp:
         self.clear_button = ttk.Button(self.button_frame, text="Clear Console", command=self.clear_console)
         self.clear_button.grid(row=1, column=2, padx=5, pady=5, sticky="ew")
 
-        # Spacer
         tk.Frame(root, height=5, bg="#2e2e2e").pack(fill='x')
 
-        # Alert counter
         self.alert_label = tk.Label(root, text="Alerts: 0", bg="#2e2e2e", fg="white")
         self.alert_label.pack(pady=5)
 
-        # Log display
-        self.log_display = scrolledtext.ScrolledText(
-        root, state='disabled', height=20, bg="#1e1e1e",
-        fg="#00ff00", insertbackground="white"
-        )
+        self.log_display = scrolledtext.ScrolledText(root, state='disabled', height=20, bg="#1e1e1e", fg="#00ff00", insertbackground="white")
         self.log_display.tag_config("warning", foreground="red")
         self.log_display.tag_config("error", foreground="orange")
         self.log_display.pack(fill='both', expand=True, padx=10, pady=10)
 
-        # Tray icon handler on window close
         self.root.protocol("WM_DELETE_WINDOW", self.minimize_to_tray)
-
-        # Start log update loop
         self.update_log()
 
     def create_image(self, color="green"):
@@ -289,7 +267,7 @@ class NetworkMonitorApp:
         draw = ImageDraw.Draw(image)
         draw.rectangle((16, 16, 48, 48), fill=color)
         return image
-    
+
     def copy_logs(self):
         self.root.clipboard_clear()
         log_text = self.log_display.get("1.0", tk.END).strip()
@@ -306,7 +284,7 @@ class NetworkMonitorApp:
 
     def create_tray_icon(self):
         image = self.create_image()
-        self.tray_icon = pystray.Icon("Scan Guard Dog ", image, "Scan Guard Dog ", menu=pystray.Menu(
+        self.tray_icon = pystray.Icon("Scan Guard Dog", image, "Scan Guard Dog", menu=pystray.Menu(
             pystray.MenuItem("Restore", self.show_window),
             pystray.MenuItem("Exit", self.exit_app)
         ))
@@ -328,7 +306,7 @@ class NetworkMonitorApp:
         global alert_count
         alert_count = 0
         self.update_alert_label()
-        self.start_button.config(state="disabled")  # Disable start button
+        self.start_button.config(state="disabled")
         iface = None if self.iface_var.get() == "[All Interfaces]" else self.iface_var.get()
         self.monitor = NetworkMonitor(iface=iface)
         self.sniff_thread = threading.Thread(target=self.monitor.start, daemon=True)
@@ -341,8 +319,8 @@ class NetworkMonitorApp:
         if self.monitor:
             self.monitor.stop()
         logging.info("Monitoring stopped. Thank you for using Scan Guard Dog")
-        self.copy_button.config(state="normal")  # Enable copy button
-        self.start_button.config(state="normal")  # Re-enable start button
+        self.copy_button.config(state="normal")
+        self.start_button.config(state="normal")
 
     def scan_ports(self):
         ip = self.monitor.local_ip if self.monitor else NetworkMonitor().get_local_ip()
@@ -352,7 +330,6 @@ class NetworkMonitorApp:
         self.alert_label.config(text=f"Alerts: {alert_count}")
         if alert_count > 0 and self.tray_icon:
             self.tray_icon.icon = self.create_image("yellow")
-
 
     def update_log(self):
         try:
@@ -373,23 +350,18 @@ class NetworkMonitorApp:
         finally:
             self.log_display.after(1000, self.update_log)
 
-# Launch application
+# Launch
 if __name__ == "__main__":
-
-
     root = tk.Tk()
     app = NetworkMonitorApp(root)
-    app.start_monitoring()  # Automatically start monitoring on launch
+    app.start_monitoring()
 
     def cleanup():
         if app.monitor:
             app.monitor.stop()
         logging.info("Application exiting: Sniffer stopped.")
 
-    # Register cleanup for normal exits
     atexit.register(cleanup)
-
-    # Register signal handlers for SIGINT (Ctrl+C) and SIGTERM
     signal.signal(signal.SIGINT, lambda signum, frame: sys.exit(0))
     signal.signal(signal.SIGTERM, lambda signum, frame: sys.exit(0))
 
