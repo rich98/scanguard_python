@@ -180,6 +180,8 @@ Please feel free to connect if you're interested in collaborating, suggesting fe
 
 # Known Issues
 
+Code needs to be opitmized
+
 Whois DNS
 
 ![image](https://github.com/user-attachments/assets/222d2c2d-516b-454c-8f86-be5b50b80b10)
