@@ -162,6 +162,27 @@ Please feel free to connect if you're interested in collaborating, suggesting fe
 
 ![50scan guard](https://github.com/user-attachments/assets/4749c1a2-465e-46e1-8916-e821791ca848)
 
+# Known Issues
+
+Whois DNS
+
+![image](https://github.com/user-attachments/assets/222d2c2d-516b-454c-8f86-be5b50b80b10)
+
+DNS does not resolve with blank screen and error:
+
+2025-05-25 13:38:02,066 - ERROR - Error trying to connect to socket: closing socket - [Errno 11001] getaddrinfo failed
+
+Other IP returns information
+
+![image](https://github.com/user-attachments/assets/047805e4-e6f8-404b-8025-d68ea00cdcf2)
+
+Interface names are unfriendly
+
+![image](https://github.com/user-attachments/assets/b3aacf38-41da-4e8c-b10b-ec61c89c9388)
+
+
+
+
 
 
 
