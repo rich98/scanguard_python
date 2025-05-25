@@ -3,6 +3,17 @@ Current version Version.0.4.12 for Windows
 
 ![image](https://github.com/user-attachments/assets/b6b42956-84cd-41cb-9c1f-e8ace9abf635)
 
+# Whats new?
+
+Whois lookup
+Select the whois button
+Enter the IP address 
+
+![image](https://github.com/user-attachments/assets/74716436-133a-4c69-ad36-a8c7106ebb0e)
+
+Results:
+
+![image](https://github.com/user-attachments/assets/fd4a4105-fb38-4343-916b-d114df185fc4)
 
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
