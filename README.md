@@ -15,6 +15,11 @@ Results:
 
 ![image](https://github.com/user-attachments/assets/fd4a4105-fb38-4343-916b-d114df185fc4)
 
+# Open Windows firewall
+Does what is says on the tin! Should work from Windows 7 or above.
+
+![image](https://github.com/user-attachments/assets/2d921d30-c07d-471c-b252-8c160242624c)
+
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
 
