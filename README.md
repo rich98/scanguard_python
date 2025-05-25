@@ -1,7 +1,7 @@
-# Scan Guard Dog Beta project
-Version.0.4.10
+# Scan Guard Dog For Windows
+Current version Version.0.4.12 for Windows
 
-![image](https://github.com/user-attachments/assets/af0da2dd-e8d8-4b4f-9558-da739c587f93)
+![image](https://github.com/user-attachments/assets/b6b42956-84cd-41cb-9c1f-e8ace9abf635)
 
 
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
@@ -10,7 +10,7 @@ In today’s increasingly complex and security-conscious IT landscape, having vi
 
 Scan Guard Pro Beta provides real-time alerts, a visual display of scan activity, and seamless system integration without relying on external dependencies or heavyweight security suites. In keeping with traditional software design values, the tool is built to be understandable, maintainable, and extendable.
 
-![image](https://github.com/user-attachments/assets/eea82c29-0a4a-4afe-98fb-ae40da738ad7)
+![image](https://github.com/user-attachments/assets/68cd0bef-81f7-4f47-844c-c417b473fb8e)
 
 
 🔍 What Does It Do?
@@ -18,7 +18,7 @@ Scan Guard Pro Beta focuses on detecting several common reconnaissance and enume
 
 TCP SYN Port Scans — attempts to discover open TCP ports via half-open handshake packets. This technique is favored due to its speed and ability to avoid full connections, making it stealthier than traditional scans. Scan Guard Pro Beta detects these SYN packets and analyzes their distribution over time to determine suspicious patterns.
 
-![image](https://github.com/user-attachments/assets/3ada2aad-aedb-42a1-bb2e-748c0325794d)
+![image](https://github.com/user-attachments/assets/bef3eb12-13e9-4e66-8c24-ff43552cb9cc)
 
 
 UDP Port Probing — used to elicit responses from open UDP services. Although harder to detect due to the lack of handshake, Scan Guard Pro Beta watches for a burst of UDP packets to multiple destination ports, a strong indicator of probing behavior intended to map services or vulnerabilities.
