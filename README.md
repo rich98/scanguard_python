@@ -20,16 +20,62 @@ Does what is says on the tin! Should work from Windows 7 or above.
 
 ![image](https://github.com/user-attachments/assets/2d921d30-c07d-471c-b252-8c160242624c)
 
+# Optimizations
+Optimization Summary
+# Optimization 1: Efficient Log Polling
+Before:
+Used log_queue.get_nowait() in a tight loop via after() to fetch logs every second.
+After:
+Replaced with log_queue.get(timeout=0.2), allowing the app to wait briefly for log entries instead of constantly polling.
+Benefit:
+Reduces CPU usage.
+More responsive logging.
+Avoids busy waiting.
+Increase this time to 0.5 for slower machines.
+
+# Optimization 2: Smart after() Scheduling
+Before:
+Called after(1000, update_log) unconditionally after each log update cycle.
+After:
+Now calls:
+after(100) when new log data is found (fast recheck).
+after(1000) when idle (slower recheck).
+Benefit:
+Reduces unnecessary wakeups.
+Keeps the GUI responsive and efficient.
+Scales better with larger logs or slower machines.
+
+# Optimization 3: Better Port Scanning with Manual Socket Handling
+Before:
+Used socket.create_connection() — simple but slower and less efficient.
+After:
+Replaced with manual socket creation and:
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+Benefit:
+Lower latency and better control.
+Clean resource handling.
+Works well for scanning many ports concurrently.
+
+# Optimization 4: Redundant Log Suppression via Alert Cooldown
+Before:
+Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, even seconds apart.
+After:
+Introduced:
+self.last_alert_times: tracks last logged time per alert type.
+_should_log(alert_key): helper method to suppress logs within 10 seconds.
+Benefit:
+Prevents log flooding.
+Makes alerts more meaningful.
+Reduces I/O and visual clutter in the console.
+
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
-
 
 Scan Guard Pro Beta provides real-time alerts, a visual display of scan activity, and seamless system integration without relying on external dependencies or heavyweight security suites. In keeping with traditional software design values, the tool is built to be understandable, maintainable, and extendable.
 
 ![image](https://github.com/user-attachments/assets/68cd0bef-81f7-4f47-844c-c417b473fb8e)
 
-
-🔍 What Does It Do?
+# What Does It Do?
 Scan Guard Pro Beta focuses on detecting several common reconnaissance and enumeration techniques that are frequently employed in penetration testing and by malicious actors. By identifying these behaviors early in the intrusion chain, the tool enables defenders to respond before attackers escalate their access or move laterally through the network.
 
 TCP SYN Port Scans — attempts to discover open TCP ports via half-open handshake packets. This technique is favored due to its speed and ability to avoid full connections, making it stealthier than traditional scans. Scan Guard Pro Beta detects these SYN packets and analyzes their distribution over time to determine suspicious patterns.
@@ -198,54 +244,3 @@ Interface names are unfriendly
 
 ![image](https://github.com/user-attachments/assets/b3aacf38-41da-4e8c-b10b-ec61c89c9388)
 
-# Optimizations
-Optimization Summary
-# Optimization 1: Efficient Log Polling
-Before:
-Used log_queue.get_nowait() in a tight loop via after() to fetch logs every second.
-After:
-Replaced with log_queue.get(timeout=0.2), allowing the app to wait briefly for log entries instead of constantly polling.
-Benefit:
-Reduces CPU usage.
-More responsive logging.
-Avoids busy waiting.
-Increase this time to 0.5 for slower machines.
-
-# Optimization 2: Smart after() Scheduling
-Before:
-Called after(1000, update_log) unconditionally after each log update cycle.
-After:
-Now calls:
-after(100) when new log data is found (fast recheck).
-after(1000) when idle (slower recheck).
-Benefit:
-Reduces unnecessary wakeups.
-Keeps the GUI responsive and efficient.
-Scales better with larger logs or slower machines.
-
-# Optimization 3: Better Port Scanning with Manual Socket Handling
-Before:
-Used socket.create_connection() — simple but slower and less efficient.
-After:
-Replaced with manual socket creation and:
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-Benefit:
-Lower latency and better control.
-Clean resource handling.
-Works well for scanning many ports concurrently.
-
-# Optimization 4: Redundant Log Suppression via Alert Cooldown
-Before:
-Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, even seconds apart.
-After:
-Introduced:
-self.last_alert_times: tracks last logged time per alert type.
-_should_log(alert_key): helper method to suppress logs within 10 seconds.
-Benefit:
-Prevents log flooding.
-Makes alerts more meaningful.
-Reduces I/O and visual clutter in the console.
-
-
-
-#Cybersecurity #Python #NetworkSecurity #ThreatDetection #Scapy #Tkinter #OpenSource #PassiveMonitoring #InfoSec #BlueTeam #NetSec
