@@ -23,5 +23,11 @@ Doesn't work without outbound connectivity.
 def get_local_ip(self): updated to remove 8.8.8.8 and now uses hostname, still uses loopback adapter
 
 24/05/2025 0.4.10
-
 Added colours to events 
+
+25/05/2025
+Added Buttons:
+Whois DNS using Python DNS - If it cannot reslove DNS the following error is deisplayed 2025-05-25 13:35:55,985 - ERROR - Error trying to connect to socket: closing socket - [Errno 11001] getaddrinfo failed See known issues.
+On other addresses it works as intended.
+Added Windows Firewall button for easy access 
+Added The tool now tries to resolve IP address to name on detection (external only)
