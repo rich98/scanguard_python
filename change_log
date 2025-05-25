@@ -31,3 +31,17 @@ Whois DNS using Python DNS - If it cannot reslove DNS the following error is dei
 On other addresses it works as intended.
 Added Windows Firewall button for easy access 
 Added The tool now tries to resolve IP address to name on detection (external only)
+
+Optimization 1: Efficient Log Polling
+Before: Used log_queue.get_nowait() in a tight loop via after() to fetch logs every second. After: Replaced with log_queue.get(timeout=0.2), allowing the app to wait briefly for log entries instead of constantly polling. Benefit: Reduces CPU usage. More responsive logging. Avoids busy waiting. Increase this time to 0.5 for slower machines.
+
+Optimization 2: Smart after() Scheduling
+Before: Called after(1000, update_log) unconditionally after each log update cycle. After: Now calls: after(100) when new log data is found (fast recheck). after(1000) when idle (slower recheck). Benefit: Reduces unnecessary wakeups. Keeps the GUI responsive and efficient. Scales better with larger logs or slower machines.
+
+Optimization 3: Better Port Scanning with Manual Socket Handling
+Before: Used socket.create_connection() — simple but slower and less efficient. After: Replaced with manual socket creation and: sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) Benefit: Lower latency and better control. Clean resource handling. Works well for scanning many ports concurrently.
+
+Optimization 4: Redundant Log Suppression via Alert Cooldown
+Before: Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, even seconds apart. After: Introduced: self.last_alert_times: tracks last logged time per alert type. _should_log(alert_key): helper method to suppress logs within 10 seconds. Benefit: Prevents log flooding. Makes alerts more meaningful. Reduces I/O and visual clutter in the console.
+
+Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
