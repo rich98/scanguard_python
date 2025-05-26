@@ -1,4 +1,6 @@
 # requirements.txt for Scan Guard Pro Beta
-scapy>=2.5.0
-pystray>=0.19.4
-pillow>=10.0.0
+scapy==2.5.0
+pystray==0.19.4
+Pillow==10.0.1
+whois==0.9.17
+
