@@ -45,3 +45,9 @@ Optimization 4: Redundant Log Suppression via Alert Cooldown
 Before: Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, even seconds apart. After: Introduced: self.last_alert_times: tracks last logged time per alert type. _should_log(alert_key): helper method to suppress logs within 10 seconds. Benefit: Prevents log flooding. Makes alerts more meaningful. Reduces I/O and visual clutter in the console.
 
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
+
+# 26/05/2025
+
+Version number now a varible 
+Log file has date and time with in the file name
+Profiler script created *note you have to update the path in the profile script
