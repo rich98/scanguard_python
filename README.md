@@ -20,6 +20,10 @@ Does what is says on the tin! Should work from Windows 7 or above.
 
 ![image](https://github.com/user-attachments/assets/2d921d30-c07d-471c-b252-8c160242624c)
 
+Export logs and kill switch, packet counter.
+
+![image](https://github.com/user-attachments/assets/d7fb41b5-b846-4d93-b0bd-0c1248ebb1cb)
+
 # Optimizations
 Optimization Summary
 # Optimization 1: Efficient Log Polling
