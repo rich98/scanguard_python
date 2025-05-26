@@ -1,4 +1,4 @@
-# Scan Guard Dog For Windows
+                # Scan Guard Dog For Windows
 Current Version.0.4.17
 
 !![image](https://github.com/user-attachments/assets/814b4dcc-6309-411a-ad76-34808dd374b8)
@@ -134,7 +134,6 @@ System tray Icon ![image](https://github.com/user-attachments/assets/da53122f-0a
 Yelloew when possible threat detected ![image](https://github.com/user-attachments/assets/cf5a949c-59fe-47ba-bd6a-5520b4a0bd7f)
 
 
-
 When suspicious activity is identified, the tray icon color changes (e.g., from green to yellow), alerting the user passively. This ensures that administrators can remain informed without keeping the application window constantly in the foreground. Additionally, the interface design supports adaptability for future enhancements, such as graphical dashboards or notification banners, while retaining the current balance of functionality and simplicity.
 
 🧠 How Detection Works
@@ -236,7 +235,7 @@ Whois DNS
 
 ![image](https://github.com/user-attachments/assets/222d2c2d-516b-454c-8f86-be5b50b80b10)
 
-DNS does not resolve with blank screen and error:
+DNS does not resolve with blank screen and error: when resolving 8.8.8.8
 
 2025-05-25 13:38:02,066 - ERROR - Error trying to connect to socket: closing socket - [Errno 11001] getaddrinfo failed
 
