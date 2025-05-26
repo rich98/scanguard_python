@@ -46,8 +46,11 @@ Before: Every event (e.g., ping sweep) from the same source IP would create a ne
 
 Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 
-# 26/05/2025
+# 26/05/2025 v0.4.17
 
 Version number now a varible 
 Log file has date and time with in the file name
 Profiler script created *note you have to update the path in the profile script
+Export logs function added
+Packets Received counter added - Clear console clears the comsole and resets the counters back to zero, does not start a new log file
+Kill switch button - to close the appliction without sending it to the system tray.
