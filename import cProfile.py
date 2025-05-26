@@ -3,7 +3,7 @@ import pstats
 import os
 
 # Set full path to your script
-target_script = r"d:\Data\output\scan_guard_dog\Scan_Guard_Dog_Pro_0.4.114_Beta.py"
+target_script = r"(Drive):\your path to file\Scan_Guard_Dog_Pro_0.4.114_Beta.py"
 profile_output = "scan_guard_profile.prof"
 
 # Prepare global context for exec
