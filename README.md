@@ -59,7 +59,7 @@ Works well for scanning many ports concurrently.
 
 # Optimization 4: Redundant Log Suppression via Alert Cooldown
 Before:
-Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, even seconds apart.
+Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, seven seconds apart.
 After:
 Introduced:
 self.last_alert_times: tracks last logged time per alert type.
