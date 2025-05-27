@@ -1,6 +1,10 @@
                 # Scan Guard Dog For Windows
 Current Version.0.4.19
 
+Version check
+
+![image](https://github.com/user-attachments/assets/9132b7fa-9f0c-492a-af06-f6db8f4fc7ab)
+
 ![image](https://github.com/user-attachments/assets/814b4dcc-6309-411a-ad76-34808dd374b8)
 
 # Whats new?
