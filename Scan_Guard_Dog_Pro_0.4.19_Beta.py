@@ -281,7 +281,7 @@ def list_open_ports(ip, port_range=(1, 1024), timeout=0.3, max_workers=None):
 # GUI-based Application Class
 class NetworkMonitorApp:
     def check_for_updates(self):
-        update_url = "https://github.com/rich98/scanguard_python/main/VERSION"
+        update_url = "https://raw.githubusercontent.com/rich98/scanguard_python/refs/heads/main/VERSION"
         current_version = VERSION
 
         def _check():
@@ -377,6 +377,9 @@ class NetworkMonitorApp:
         self.log_display.tag_config("error", foreground="#FF4500")     # Orange-Red
         self.log_display.pack(fill='both', expand=True, padx=10, pady=10)
         self.root.protocol("WM_DELETE_WINDOW", self.minimize_to_tray)
+        #check for updates
+        self.check_for_updates()
+
         self.update_log()
 
     def create_image(self, color="green"):
