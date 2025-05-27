@@ -54,3 +54,9 @@ Profiler script created *note you have to update the path in the profile script
 Export logs function added
 Packets Received counter added - Clear console clears the comsole and resets the counters back to zero, does not start a new log file
 Kill switch button - to close the appliction without sending it to the system tray.
+
+# version 04.4.18
+Thread error handling improved
+
+# version 0.4.19
+Version Check added
