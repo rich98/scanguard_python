@@ -1,7 +1,5 @@
-                # Scan Guard Dog For Windows
+# Scan Guard Dog For Windows
 Current Version.0.4.22
-
-
 
 # Whats new?
 
