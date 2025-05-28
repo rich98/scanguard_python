@@ -55,11 +55,13 @@ Export logs function added
 Packets Received counter added - Clear console clears the comsole and resets the counters back to zero, does not start a new log file
 Kill switch button - to close the appliction without sending it to the system tray.
 
-# version 04.4.18
+# 27/05/2025 version 04.4.18
 Thread error handling improved
 
 # version 0.4.19
 Version Check added
 
-# Version 0.4.20
+# 28/05/2025 Version 0.4.20
 Admin check added - You now need to run the tool As administartor on windows, sudo etc.
+
+Toggle seitches for arp and icmp
