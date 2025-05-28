@@ -1,9 +1,14 @@
                 # Scan Guard Dog For Windows
-Current Version.0.4.19
+Current Version.0.4.22
 
-![image](https://github.com/user-attachments/assets/814b4dcc-6309-411a-ad76-34808dd374b8)
+
 
 # Whats new?
+
+Toggle switches to turn detection off for ICMP and ARP
+
+![image](https://github.com/user-attachments/assets/bfb8c19a-5634-4c21-bcec-41b3427de1ee)
+
 
 Version check
 
