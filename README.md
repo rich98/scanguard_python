@@ -1,6 +1,15 @@
 # Scan Guard Dog For Windows
 Current Version.0.4.28
 
+# Whsts new? 0.4.28
+# Syslog
+- Syslog toggle switch updateing the classes and methods (see the ARP warings being logged on a remote server.
+  At the moment the ip address is hardcoded but will implent a persistent settings (.ini file) in time For now its a MVP
+  The fuction is off by default
+![image](https://github.com/user-attachments/assets/ef536594-b950-4d17-9532-8e9c7383352d)
+
+![image](https://github.com/user-attachments/assets/132369b4-65b4-413c-9795-79268f6ba7e1)
+
 # Whats new? 0.4.27
 New set of counters "active IPs" Pkts/sec ARP counter, ICMP counter, TCP Counter, UDPOcounter
 Menu Bar - Settings to change the detection threshold 
@@ -17,16 +26,6 @@ Dark Mode toggle switch
 - Highlighted abnormal log messages in purple for quick triage
 - Improved update_log() pattern detection with structured tags
   
-# Whsts new? 0.4.28
-# Syslog
-- Syslog toggle switch updateing the classes and methods (see the ARP warings being logged on a remote server.
-  At the moment the ip address is hardcoded but will implent a persistent settings (.ini file) in time For now its a MVP
-  The fuction is off by default
-![image](https://github.com/user-attachments/assets/ef536594-b950-4d17-9532-8e9c7383352d)
-
-![image](https://github.com/user-attachments/assets/132369b4-65b4-413c-9795-79268f6ba7e1)
-
-
 # Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
 
