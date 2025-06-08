@@ -6,6 +6,7 @@ New set of counters "active IPs" Pkts/sec ARP counter, ICMP counter, TCP Counter
 Menu Bar - Settings to change the detection threshold 
 IDS Grid section with active scroll
 Dark Mode toggle switch
+
 ![image](https://github.com/user-attachments/assets/38960136-a24e-492c-b4a9-45efbe0ebdb7)
 
 ✨ GUI Enhancements & Abnormality Table Integration
