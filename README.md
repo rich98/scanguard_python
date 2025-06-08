@@ -1,5 +1,5 @@
 # Scan Guard Dog For Windows
-Current Version.0.4.22
+Current Version.0.4.27
 
 # Whats new?
 New set of counters "active IPs" Pkts/sec ARP counter, ICMP counter, TCP Counter, UDPOcounter
