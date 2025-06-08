@@ -66,3 +66,19 @@ Admin check added - You now need to run the tool As administartor on windows, su
 
 Toggle seitches for arp and icmp
 admin check
+
+# 08/06/2025 0.4.24
+Will open with elevated persmissions by default UAC is activated
+Real-Time Statistics Display Added 
+Packets per second
+Active IPs
+Count of each alert type (ARP, ICMP, TCP, UDP)
+Introduced self.active_ips and self.logged_ips to track and log only unique IPs.
+Settings Menu Added to Title Bar
+Threshold Adjustment GUI for port_threshold, icmp_threshold, udp_threshold, arp_threshold
+save_settings() method updates these in real time during monitoring.
+Alert Counter Improvements The _check_arp() method now counts ARP alerts using self.alert_counts["ARP"].
+oggle switches for ARP/ICMP moved above the button rows for clearer visibility
+Bugs
+Fixed IP Logging Not Triggering
+Fixed Menu Callback Exceptions
