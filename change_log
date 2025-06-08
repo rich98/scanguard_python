@@ -82,3 +82,11 @@ oggle switches for ARP/ICMP moved above the button rows for clearer visibility
 Bugs
 Fixed IP Logging Not Triggering
 Fixed Menu Callback Exceptions
+
+# 08/06/2025 0.4.27
+
+Table grid for abnormal network traffic Plus log to console
+
+# 08/06/2025 0.4.28
+
+MVP syslog traffic - hardcoded for the moment this will change
