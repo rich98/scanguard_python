@@ -21,7 +21,7 @@ Dark Mode toggle switch
 - Syslog toggle switch updateing the classes and methods (see the ARP warings being logged on a remote server.
   At the moment the ip address is hardcoded but will implent a persistent settings (.ini file) in time For now its a MVP
   The fuction is off by default
-![image](https://github.com/user-attachments/assets/4132957e-30c9-47aa-a733-c62618a3d01e)
+![image](https://github.com/user-attachments/assets/ef536594-b950-4d17-9532-8e9c7383352d)
 
 ![image](https://github.com/user-attachments/assets/132369b4-65b4-413c-9795-79268f6ba7e1)
 
