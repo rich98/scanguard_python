@@ -18,7 +18,7 @@ Dark Mode toggle switch
 - Improved update_log() pattern detection with structured tags
   
 # Whsts new? 0.4.28
-# syslog
+# Syslog
 - Syslog toggle switch updateing the classes and methods (see the ARP warings being logged on a remote server.
   At the moment the ip address is hardcoded but will implent a persistent settings (.ini file) in time For now its a MVP
   The fuction is off by default
