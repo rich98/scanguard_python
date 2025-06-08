@@ -3,7 +3,9 @@ Name: Cerberus
 
 Tagline: The Network Guard Dog
 
-Logo Concept: The three-headed hound (as seen in your image) symbolizes the triad of digital security:
+Logo Concept: The three-headed hound (as seen in image) symbolizes the triad of digital security:
+
+![image](https://github.com/user-attachments/assets/92e20741-919a-488e-850e-fa015e601c37)
 
 Detection
 
