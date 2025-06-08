@@ -2,82 +2,19 @@
 Current Version.0.4.22
 
 # Whats new?
+New set of counters "active IPs" Pkts/sec ARP counter, ICMP counter, TCP Counter, UDPOcounter
+Menu Bar - Settings to change the detection threshold 
+IDS Grid section with active scroll
+Dark Mode toggle switch
+![image](https://github.com/user-attachments/assets/38960136-a24e-492c-b4a9-45efbe0ebdb7)
 
-Toggle switches to turn detection off for ICMP and ARP
+✨ GUI Enhancements & Abnormality Table Integration
 
-![image](https://github.com/user-attachments/assets/bfb8c19a-5634-4c21-bcec-41b3427de1ee)
-
-
-Version check
-
-![image](https://github.com/user-attachments/assets/9132b7fa-9f0c-492a-af06-f6db8f4fc7ab)
-
-Whois lookup
-Select the whois button
-Enter the IP address 
-
-![image](https://github.com/user-attachments/assets/74716436-133a-4c69-ad36-a8c7106ebb0e)
-
-Results:
-
-![image](https://github.com/user-attachments/assets/fd4a4105-fb38-4343-916b-d114df185fc4)
-
-# Open Windows firewall
-Does what is says on the tin! Should work from Windows 7 or above.
-
-![image](https://github.com/user-attachments/assets/2d921d30-c07d-471c-b252-8c160242624c)
-
-Export logs and kill switch, packet counter.
-
-![image](https://github.com/user-attachments/assets/d7fb41b5-b846-4d93-b0bd-0c1248ebb1cb)
-
-# Optimizations
-Optimization Summary
-# Optimization 1: Efficient Log Polling
-Before:
-Used log_queue.get_nowait() in a tight loop via after() to fetch logs every second.
-After:
-Replaced with log_queue.get(timeout=0.2), allowing the app to wait briefly for log entries instead of constantly polling.
-Benefit:
-Reduces CPU usage.
-More responsive logging.
-Avoids busy waiting.
-Increase this time to 0.5 for slower machines.
-
-# Optimization 2: Smart after() Scheduling
-Before:
-Called after(1000, update_log) unconditionally after each log update cycle.
-After:
-Now calls:
-after(100) when new log data is found (fast recheck).
-after(1000) when idle (slower recheck).
-Benefit:
-Reduces unnecessary wakeups.
-Keeps the GUI responsive and efficient.
-Scales better with larger logs or slower machines.
-
-# Optimization 3: Better Port Scanning with Manual Socket Handling
-Before:
-Used socket.create_connection() — simple but slower and less efficient.
-After:
-Replaced with manual socket creation and:
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-Benefit:
-Lower latency and better control.
-Clean resource handling.
-Works well for scanning many ports concurrently.
-
-# Optimization 4: Redundant Log Suppression via Alert Cooldown
-Before:
-Every event (e.g., ping sweep) from the same source IP would create a new warning log entry, seven seconds apart.
-After:
-Introduced:
-self.last_alert_times: tracks last logged time per alert type.
-_should_log(alert_key): helper method to suppress logs within 10 seconds.
-Benefit:
-Prevents log flooding.
-Makes alerts more meaningful.
-Reduces I/O and visual clutter in the console.
+- Added Treeview-based abnormality grid with auto-scroll
+- Integrated vertical scrollbar for overflow control
+- Injected real-time IDS data via `add_abnormality_to_grid()`
+- Highlighted abnormal log messages in purple for quick triage
+- Improved update_log() pattern detection with structured tags
 
 # Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
