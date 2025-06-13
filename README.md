@@ -1,7 +1,7 @@
 # Scan Guard Dog For Windows
 Current Version.0.5.2
 
-#Whats new 0.5.2
+#Whats new 0.5.6
 
 First class to be split from main application
 Bug fix in kill switch and Stop monitor could cause the appliction to hang
