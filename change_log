@@ -90,3 +90,10 @@ Table grid for abnormal network traffic Plus log to console
 # 08/06/2025 0.4.28
 
 MVP syslog traffic - hardcoded for the moment this will change
+
+13/06/2025 0.5.2
+
+toggleswitch class moved to seprate file
+bug fix for kill switch and stop monitoring
+Fadded new feature flood protect - MVP
+packaged as a ziop file
