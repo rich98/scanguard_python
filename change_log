@@ -97,3 +97,6 @@ toggleswitch class moved to seprate file
 bug fix for kill switch and stop monitoring
 Fadded new feature flood protect - MVP
 packaged as a ziop file
+
+# 13/06/2025 0.5.4
+fixed - two log files get created on startup
