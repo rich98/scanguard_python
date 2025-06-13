@@ -1,5 +1,15 @@
 # Scan Guard Dog For Windows
-Current Version.0.4.28
+Current Version.0.5.2
+
+#Whats new 0.5.2
+
+First class to be split from main application
+Bug fix in kill switch and Stop monitor could cause the appliction to hang
+To use exstract the zip file, both files need to be in the same directory
+Flood Protection feature
+Adjustments to active counters
+
+![image](https://github.com/user-attachments/assets/0f257021-168e-4c84-abb0-fff49e828e8c)
 
 # Whsts new? 0.4.28
 # Syslog
@@ -9,14 +19,6 @@ Current Version.0.4.28
 ![image](https://github.com/user-attachments/assets/ef536594-b950-4d17-9532-8e9c7383352d)
 
 ![image](https://github.com/user-attachments/assets/132369b4-65b4-413c-9795-79268f6ba7e1)
-
-# Whats new? 0.4.27
-New set of counters "active IPs" Pkts/sec ARP counter, ICMP counter, TCP Counter, UDPOcounter
-Menu Bar - Settings to change the detection threshold 
-IDS Grid section with active scroll
-Dark Mode toggle switch
-
-![image](https://github.com/user-attachments/assets/38960136-a24e-492c-b4a9-45efbe0ebdb7)
 
 ✨ GUI Enhancements & Abnormality Table Integration
 
