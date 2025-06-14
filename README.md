@@ -8,8 +8,10 @@ Bug fix in kill switch and Stop monitor could cause the appliction to hang
 To use exstract the zip file, both files need to be in the same directory
 Flood Protection feature
 Adjustments to active counters
+The orignal alert counter retired
 
-![image](https://github.com/user-attachments/assets/0f257021-168e-4c84-abb0-fff49e828e8c)
+![image](https://github.com/user-attachments/assets/cf14741e-eb1e-47a7-a82e-78aed8443cd9)
+
 
 # Whsts new? 0.4.28
 # Syslog
