@@ -7,8 +7,7 @@ Current Version.0.58
 New class Whitelisting for know good IP's v1
 Light \ Dark mode improvements 
 
-![image](https://github.com/user-attachments/assets/c61a887f-f553-44c1-a585-1fa3ef5ed4c7)
-
+![image](https://github.com/user-attachments/assets/cd339546-038b-4e55-9cb1-1eb3f75d0eb3)
 
 # Whats new 0.5.6
 
