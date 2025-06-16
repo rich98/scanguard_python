@@ -7,6 +7,7 @@ Current Version.0.5.9.1
 New class Whitelisting for know good IP's v1.
 Light \ Dark mode improvements. 
 Improvements for flood logic (not finished).
+Update to flood protection
 
 ![image](https://github.com/user-attachments/assets/cd339546-038b-4e55-9cb1-1eb3f75d0eb3)
 
