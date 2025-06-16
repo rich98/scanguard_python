@@ -1,8 +1,8 @@
 # Scan Guard Dog For Windows
 
-Current Version.0.58
+Current Version.0.59
 
-# Whats new 0.5.8
+# Whats new 0.5.9
 
 New class Whitelisting for know good IP's v1.
 Light \ Dark mode improvements. 
