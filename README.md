@@ -2,12 +2,13 @@
 
 Current Version.0.5.9.1
 
-# Whats new 0.5.9 (0.5.9.1 minor bug fix in treeview)
+# Whats new 0.5.9 (0.5.9.2 minor bug fix in treeview)
 
 New class Whitelisting for know good IP's v1.
 Light \ Dark mode improvements. 
 Improvements for flood logic (not finished).
-Update to flood protection
+Update to flood protection (0.5.9.1)
+Bug fix IDS function now logs once - not twice (0.5.9.2)
 
 ![image](https://github.com/user-attachments/assets/cd339546-038b-4e55-9cb1-1eb3f75d0eb3)
 
