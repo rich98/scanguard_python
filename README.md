@@ -2,7 +2,7 @@
 
 Current Version.0.5.9.1
 
-# Whats new 0.5.9 (0.9.5.9.1 minor bug fix in treeview)
+# Whats new 0.5.9 (0.5.9.1 minor bug fix in treeview)
 
 New class Whitelisting for know good IP's v1.
 Light \ Dark mode improvements. 
