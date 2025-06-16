@@ -1,6 +1,6 @@
 # Scan Guard Dog For Windows
 
-Current Version.0.59
+Current Version.0.5.9
 
 # Whats new 0.5.9
 
