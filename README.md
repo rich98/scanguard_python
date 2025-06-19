@@ -1,6 +1,8 @@
 # Scan Guard Dog For Windows
 
-Current Version.0.5.9.1
+Current Version.0.6.5
+
+New Classes suspicious_port_detector_v1.py, help_file_viewer_v1.py
 
 # Whats new 0.5.9 (0.5.9.2 minor bug fix in treeview)
 
