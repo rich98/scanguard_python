@@ -100,3 +100,52 @@ packaged as a ziop file
 
 # 13/06/2025 0.5.4
 fixed - two log files get created on startup
+
+# 19/06/2025 0.6.5
+Feature Enhancements
+Help Menu Added:
+
+New menu bar item labeled “Help”.
+
+Includes:
+
+A command to open HELP.txt in read-only mode.
+
+A pop-up to explain TCP flag meanings.
+
+Implemented via a new class: HelpFileViewer.
+
+Expanded TreeView Columns:
+
+Two new columns added:
+
+Length: Displays TCP segment length.
+
+TCP Flags: Shows decoded TCP control flags (e.g., SYN, ACK).
+
+GUI updated to display these values for relevant packets.
+
+Human-readable TCP Flag Descriptions:
+
+TCP flags like S, A, F are now translated into full names (SYN, ACK, FIN, etc.).
+
+These are shown in both logs and TreeView.
+
+Structural / Code Improvements
+New Module: help_file_viewer_v1.py
+
+Modularized GUI help logic.
+
+Opens a file viewer using a Toplevel window with a styled scrolled text area.
+
+GUI Integration Improvements:
+
+add_abnormality_to_grid method now includes extra fields (length, tcp_flags).
+
+Tooltips or text truncation (not yet implemented but scaffolded) are prepared to handle long TreeView rows.
+
+Improved Logging and User Guidance:
+
+Help file now includes explanations of each column in the TreeView.
+
+A basic changelog section was added.
