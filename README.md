@@ -18,7 +18,9 @@ New Classes
 31337: BackOrifice (classic malware)
    
 3. help file viewer v1
-New colums added in tree view TCP flags & Length
+   
+New colums added in tree view: Interfaces, TCP flags & Length
+The interface list is displays a freindly list with its current IP
 
 ![image](https://github.com/user-attachments/assets/2a304b15-2bff-43a3-9b88-1491ba4b0d6e)
 
