@@ -2,7 +2,26 @@
 
 Current Version.0.6.5
 
-New Classes suspicious_port_detector_v1.py, help_file_viewer_v1.py
+# Whats new 0.6.5
+New Classes 
+1. suspicious port detector
+23: Telnet
+445: SMB
+3389: RDP
+135: DCOM
+1900: SSDP
+69: TFTP
+1433: MSSQL (default port)
+1521: Oracle DB (defauilt port)
+21: FTP
+2222: Alternate SSH
+31337: BackOrifice (classic malware)
+   
+3. help file viewer v1
+New colums added in tree view TCP flags & Length
+
+![image](https://github.com/user-attachments/assets/2a304b15-2bff-43a3-9b88-1491ba4b0d6e)
+
 
 # Whats new 0.5.9 (0.5.9.2 minor bug fix in treeview)
 
@@ -25,23 +44,6 @@ The orignal alert counter retired
 
 ![image](https://github.com/user-attachments/assets/cf14741e-eb1e-47a7-a82e-78aed8443cd9)
 
-
-# Whsts new? 0.4.28
-# Syslog
-- Syslog toggle switch updateing the classes and methods (see the ARP warings being logged on a remote server.
-  At the moment the ip address is hardcoded but will implent a persistent settings (.ini file) in time For now its a MVP
-  The fuction is off by default
-![image](https://github.com/user-attachments/assets/ef536594-b950-4d17-9532-8e9c7383352d)
-
-![image](https://github.com/user-attachments/assets/132369b4-65b4-413c-9795-79268f6ba7e1)
-
-✨ GUI Enhancements & Abnormality Table Integration
-
-- Added Treeview-based abnormality grid with auto-scroll
-- Integrated vertical scrollbar for overflow control
-- Injected real-time IDS data via `add_abnormality_to_grid()`
-- Highlighted abnormal log messages in purple for quick triage
-- Improved update_log() pattern detection with structured tags
   
 # Building "Scan Guard Pro Beta": A GUI-Based Passive Network Threat Monitor in Python
 In today’s increasingly complex and security-conscious IT landscape, having visibility into network reconnaissance activities is more critical than ever. Attackers often begin their campaigns with simple scans to identify open ports, active hosts, and vulnerabilities. Recognizing this foundational threat vector, I developed Scan Guard Pro Beta, a GUI-driven, cross-platform passive monitoring tool written entirely in Python. Leveraging the power of Scapy, the flexibility of Tkinter, and the system tray integration capabilities of pystray, this utility is intended for network professionals who value clarity, control, and a strong adherence to best practices.
