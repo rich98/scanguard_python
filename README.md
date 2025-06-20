@@ -1,6 +1,15 @@
 # Scan Guard Dog For Windows
 
-Current Version.0.6.7
+Current Version.0.7.0.1
+
+# Whats new 0.7.0.1
+
+Name change
+Bug fix for flood protection
+
+![cerberus](https://github.com/user-attachments/assets/122f84f7-1892-47aa-99d0-b86a4b7a5a10)
+
+![image](https://github.com/user-attachments/assets/50f4e939-535e-4022-9fc1-57d8df532bff)
 
 # Whats new 0.6.7
 
