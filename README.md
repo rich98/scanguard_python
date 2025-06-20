@@ -1,4 +1,4 @@
-# Scan Guard Dog For Windows
+# Cerberus For Windows
 
 Current Version.0.7.0.1
 
