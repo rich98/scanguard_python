@@ -1,6 +1,12 @@
 # Scan Guard Dog For Windows
 
-Current Version.0.6.5
+Current Version.0.6.7
+
+# Whats new 0.6.7
+
+config.ini file, not yet able to save to the ini file from the app, its on the list to do.
+
+![image](https://github.com/user-attachments/assets/91372fdf-7125-4750-8be6-50253280d301)
 
 # Whats new 0.6.5
 New Classes 
