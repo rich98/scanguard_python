@@ -125,6 +125,8 @@ TCP Flags: Shows decoded TCP control flags (e.g., SYN, ACK).
 
 GUI updated to display these values for relevant packets.
 
+# Whats new 0.6.7
+
 Human-readable TCP Flag Descriptions:
 
 TCP flags like S, A, F are now translated into full names (SYN, ACK, FIN, etc.).
