@@ -157,3 +157,23 @@ New "file" menu with optoions from the gui screen
 Splash screen
 Application renamed Cerberus
 Bug fix in flood protection
+
+# 20/06/2025 0.7.0.4
+Version: Cerberus 0.7.0.4 — Change Log Summary
+Configuration Enhancements
+Integrated reading of syslog settings (enabled, address, port) from config.ini
+Added flood_protection_enabled and flood_threshold as configurable INI values
+Fallbacks applied to prevent crash on missing or malformed INI values
+
+GUI Improvements
+Added dynamic display of Syslog destination (IP:port) in the GUI log area
+
+Flood Protection Logic
+Flood protection is now conditionally activated based on config.ini
+Threshold is configurable per second
+Logic refactored for runtime flexibility
+
+Code Cleanup & Stability
+Corrected several indentation and initialization bugs
+Moved syslog_ip and syslog_port into class scope (self.syslog_ip, self.syslog_port) to avoid runtime errors
+Added error handling for config values to avoid startup exceptions
