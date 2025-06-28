@@ -1,6 +1,9 @@
 # Cerberus For Windows
 
-Current Version.0.7.0.1
+Current Version.0.7.1.4
+
+# Whats new 0.7.0.1
+Minor bug fixes see change log v2
 
 # Whats new 0.7.0.1
 
