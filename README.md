@@ -5,6 +5,11 @@ Current Version.0.7.1.4
 # Whats new 0.7.0.1
 Minor bug fixes see change log v2
 
+Improved Myport scan
+
+![image](https://github.com/user-attachments/assets/891c4785-d07d-41c0-868a-147e2128008f)
+
+
 # Whats new 0.7.0.1
 
 Name change to Cerberus and Bug fix for flood protection
